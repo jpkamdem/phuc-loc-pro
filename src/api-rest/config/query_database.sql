@@ -7,10 +7,20 @@ CREATE TABLE `Saveur` (
     `nom` varchar(30) DEFAULT NULL
 )
 
+--
+-- Structure de la table `Aliment`
+--
+
+
 CREATE TABLE `Aliment` (
     `id_aliment` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     `nom` varchar(30) DEFAULT NULL
 )
+
+--
+-- Structure de la table `Box`
+--
+
 
 CREATE TABLE `Box` (
     `id_box` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
