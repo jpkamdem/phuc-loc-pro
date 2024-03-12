@@ -1,0 +1,15 @@
+footer {
+    height: 80px;
+    background: #222222;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+  }
+  footer p {
+    color: #fff;
+  }
+  @media (max-width: 768px) {
+    footer {
+      height: 65px;
+    }
+  }

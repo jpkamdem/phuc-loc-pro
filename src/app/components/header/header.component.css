@@ -1,0 +1,32 @@
+nav {
+    background: #222222;
+    display: flex;
+}
+ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+li img {
+    height: 75px;
+}
+li {
+    padding: 0 2em;
+}
+li a, li a:visited {
+    text-decoration: none;
+    color: #fff;
+    transition: .1s;
+}
+li a:hover {
+    color: #FF5757;
+}
+li:first-of-type {
+    padding: 0;
+}
+@media (max-width: 768px) {
+    li {
+        padding: 0 .9em;
+        font-size: .8em;
+    }
+}
