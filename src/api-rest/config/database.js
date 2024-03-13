@@ -1,15 +1,19 @@
-const { createConnection } = require('mysql')
+const { createConnection } = require("mysql")
 
 const connection = createConnection({
-  host: 'localhost',
-  dbname: 'phuc_db',
-  user: 'root',
-  password: 'Crocodile123***',
-});
-
-connection.query('INSERT INTO aliment (nom) VALUES (pomme)', (err, res, fields) => {
-  if (err) throw err
-  console.log('Pour résoudre le problème : ', res[0].solution)
+  host: "localhost",
+  dbname: "phuc_db",
+  user: "root",
+  password: "Crocodile123***",
 })
+
+connection.query(
+  'select * from aliment', (err, res, fields) => {
+    if (err) {
+      console.log(err)
+    }
+    console.log(res)
+  } 
+)
 
 connection.end()
