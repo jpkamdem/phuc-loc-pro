@@ -2,12 +2,12 @@ CREATE DATABASE IF NOT EXISTS phuc_db
 
 CREATE TABLE IF NOT EXISTS Saveurs (
     id_saveur int primary key auto_increment,
-    nom varchar(30)
+    nom varchar(30) UNIQUE
 )
 
 CREATE TABLE IF NOT EXISTS Aliments (
     id_aliment int primary key auto_increment,
-    nom varchar(30)
+    nom varchar(30) UNIQUE
 )
 
 CREATE TABLE IF NOT EXISTS Box (
