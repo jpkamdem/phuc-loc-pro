@@ -1,7 +1,12 @@
-class Database {
-    host = '127.0.0.1'
-    dbname = 'phuc-loc-db'
-    username = 'root'
-    password = ''
-    connection: any;
-}
+const { createConnection } = require('mysql')
+
+class Database {}
+
+const connection = createConnection({
+  host: 'localhost',
+  dbname: 'phuc',
+  user: 'root',
+  password: '',
+});
+
+connection.query

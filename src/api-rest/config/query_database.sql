@@ -1,32 +1,22 @@
---
--- Structure de la table `Saveur`
---
+CREATE DATABASE IF NOT EXISTS phuc_db
 
-CREATE TABLE `Saveur` (
-    `id_saveur` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    `nom` varchar(30) DEFAULT NULL
+CREATE TABLE IF NOT EXISTS Saveurs (
+    id_saveur int primary key auto_increment,
+    nom varchar(30)
 )
 
---
--- Structure de la table `Aliment`
---
-
-
-CREATE TABLE `Aliment` (
-    `id_aliment` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    `nom` varchar(30) DEFAULT NULL
+CREATE TABLE IF NOT EXISTS Aliments (
+    id_aliment int primary key auto_increment,
+    nom varchar(30)
 )
 
---
--- Structure de la table `Box`
---
-
-
-CREATE TABLE `Box` (
-    `id_box` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    `nom` varchar(30) DEFAULT NULL,
-    `pieces` int(11) DEFAULT NULL,
-    `prix` int(11) DEFAULT NULL,
-    `image` varchar(255) DEFAULT NULL,
-    `aliments` varchar(30) DEFAULT NULL
+CREATE TABLE IF NOT EXISTS Box (
+    id_box int primary key auto_increment,
+    nom varchar(30) default null,
+    pieces int(11) default null,
+    prix int(11) default null,
+    images varchar(255) default null,
+    aliments varchar(30),
+    saveurs varchar(30),
+    foreign key(aliments) references Aliments(nom), 
 )
