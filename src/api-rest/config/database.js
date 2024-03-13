@@ -4,7 +4,7 @@ const connection = createConnection({
   host: "localhost",
   dbname: "phuc_db",
   user: "root",
-  password: "Crocodile123***",
+  password: "",
 })
 
 connection.query(
