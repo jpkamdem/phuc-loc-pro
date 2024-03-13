@@ -3,7 +3,7 @@ const { createConnection } = require('mysql')
 const connection = createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'TestPassword123***',
+  password: 'RooT123***',
   database: 'phuc_db'
 })
 
@@ -14,5 +14,7 @@ connection.connect((err => {
   }
   console.log('Connexion à la base de donnée effectuée.')
 }))
+
+connection.end()
 
 module.exports = connection
