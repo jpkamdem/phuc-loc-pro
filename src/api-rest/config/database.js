@@ -1,19 +1,18 @@
-const { createConnection } = require("mysql")
+const { createConnection } = require('mysql')
 
 const connection = createConnection({
-  host: "localhost",
-  dbname: "phuc_db",
-  user: "root",
-  password: "",
+  host: 'localhost',
+  user: 'root',
+  password: 'RootKeyPassword555',
+  database: 'phuc_db'
 })
 
-connection.query(
-  'select * from aliment', (err, res, fields) => {
-    if (err) {
-      console.log(err)
-    }
-    console.log(res)
-  } 
-)
+connection.connect((err => {
+  if (err) {
+    console.error('Erreur de connexion à la base de donnée : ', err)
+    return
+  }
+  console.log('Connexion à la base de donnée effectuée.')
+}))
 
-connection.end()
+module.exports = connection

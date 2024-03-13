@@ -1,23 +1,21 @@
-CREATE DATABASE IF NOT EXISTS phuc_db
-
 CREATE TABLE IF NOT EXISTS Saveurs (
-    id_saveur int primary key auto_increment,
-    nom varchar(30)
-)
+    id_saveur INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(30)
+);
 
 CREATE TABLE IF NOT EXISTS Aliments (
-    id_aliment int primary key auto_increment,
-    nom varchar(30)
-)
+    id_aliment INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(30)
+);
 
 CREATE TABLE IF NOT EXISTS Box (
-    id_box int primary key auto_increment,
-    nom varchar(30) default null,
-    pieces int(11) default null,
-    prix int(11) default null,
-    images varchar(255) default null,
-    aliments varchar(30),
-    saveurs varchar(30),
-    foreign key(aliments) references Aliments(id_aliment),
-    foreign key(saveurs) references Saveurs(id_saveur),
-)
+    id_box INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(30) DEFAULT NULL,
+    pieces INT DEFAULT NULL,
+    prix INT DEFAULT NULL,
+    images VARCHAR(255) DEFAULT NULL,
+    id_aliment INT,
+    id_saveur INT,
+    FOREIGN KEY (id_aliment) REFERENCES Aliments(id_aliment) ON DELETE CASCADE,
+    FOREIGN KEY (id_saveur) REFERENCES Saveurs(id_saveur) ON DELETE CASCADE
+);
