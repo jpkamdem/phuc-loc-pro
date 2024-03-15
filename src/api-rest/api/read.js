@@ -93,6 +93,7 @@ connection.query('select * from Box', (err, res) => {
                     .catch(err => {
                         console.log('Erreur lors de la récupération des saveurs :', err)
                     })
+                    //test
             })
         })
     })
