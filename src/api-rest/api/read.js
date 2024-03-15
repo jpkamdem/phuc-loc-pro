@@ -34,19 +34,7 @@ connection.query('select * from Box', (err, res) => {
                     console.log('Erreur dans la requête Box_Aliments : ', errAlim)
                     return
                 }
-                // const saveurs = resSaveurs.map(item => item.id_saveur)
-                // const aliments = resAlim.map(item => item.id_aliment)
-
-                // const formattedBox = {
-                //     id_box: box.id_box,
-                //     nom: box.nom,
-                //     pieces: box.pieces,
-                //     prix: box.prix,
-                //     image: box.image,
-                //     saveurs: saveurs,
-                //     aliments: aliments
-                // }
-
+                
                 const saveursPromises = resSaveurs.map(item => {
                     return new Promise ((resolve, reject) => {
                         connection.query('select nom from Saveurs where id_saveur = ?', [item.id_saveur], (err, res) => {
@@ -91,9 +79,8 @@ connection.query('select * from Box', (err, res) => {
                             })
                     })
                     .catch(err => {
-                        console.log('Erreur lors de la récupération des saveurs :', err)
+                        console.log('Erreur lors de la récupération des saveurs :')
                     })
-                    //test
             })
         })
     })
