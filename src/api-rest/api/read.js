@@ -3,26 +3,11 @@ const connection = require("../config/database.js");
 const totalQueries = 13;
 let completedQueries = 0;
 
-const handleQueryCompletion = (cb, boxesData) => {
-  completedQueries++;
-
-  if (completedQueries == totalQueries) {
-    connection.end((err) => {
-      if (err) {
-        console.error("Erreur lors de la fermeture de la connexion : ", err);
-        return;
-      } else {
-        console.log("Fermeture de la connexion.");
-        cb(null, boxesData);
-      }
-    });
-  }
-};
-
 const read = (cb) => {
   connection.query("select * from Box", (err, res) => {
     if (err) {
       console.log("Erreur dans la première requete :", err);
+      cb(err); // Appel du callback avec l'erreur
       return;
     }
 
@@ -35,6 +20,7 @@ const read = (cb) => {
         (errSaveurs, resSaveurs) => {
           if (errSaveurs) {
             console.log("Erreur dans la requête Box_Saveur :", errSaveurs);
+            cb(errSaveurs); // Appel du callback avec l'erreur
             return;
           }
           connection.query(
@@ -43,6 +29,7 @@ const read = (cb) => {
             (errAlim, resAlim) => {
               if (errAlim) {
                 console.log("Erreur dans la requête Box_Aliments : ", errAlim);
+                cb(errAlim); // Appel du callback avec l'erreur
                 return;
               }
 
@@ -90,21 +77,24 @@ const read = (cb) => {
                         saveurs: saveurs,
                         aliments: aliments,
                       };
-                      boxesData.push(formattedBox)
-                      //   console.log(formattedBox);
-                      handleQueryCompletion(cb, boxesData);
+                      boxesData.push(formattedBox);
+                      completedQueries++; // Mettre à jour le compteur des requêtes terminées
+                      if (completedQueries === totalQueries) {
+                        // Vérifier si toutes les requêtes sont terminées
+                        cb(null, boxesData); // Appel du callback avec les données
+                      }
                     })
                     .catch((err) => {
                       console.log(
                         "Erreur lors de la récupération des aliments :",
                         err
                       );
-                      cb(err)
+                      cb(err); // Appel du callback avec l'erreur
                     });
                 })
                 .catch((err) => {
                   console.log("Erreur lors de la récupération des saveurs :", err);
-                  cb(err)
+                  cb(err); // Appel du callback avec l'erreur
                 });
             }
           );
