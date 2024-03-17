@@ -93,7 +93,10 @@ const read = (cb) => {
                     });
                 })
                 .catch((err) => {
-                  console.log("Erreur lors de la récupération des saveurs :", err);
+                  console.log(
+                    "Erreur lors de la récupération des saveurs :",
+                    err
+                  );
                   cb(err); // Appel du callback avec l'erreur
                 });
             }

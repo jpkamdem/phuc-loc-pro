@@ -14,7 +14,7 @@ const read = require('./api/read.js')
 //     })
 // })
 
-router.get('/test', (req, res) => {
+router.get('/get-boxes', (req, res) => {
     read((err, result) => {
         if (err) {
             console.error('Erreur dans la récupération des boxes :', err)
