@@ -1,0 +1,34 @@
+.boxes-container {
+    margin: auto;
+    display: flex;
+    width: 60vw;
+    max-width: 910px;
+    min-width: 666px;
+    justify-content: space-around;
+    align-items: center;
+}
+.tag-container {
+    display: flex;
+    flex-flow: column;
+    padding: 2em 4em;
+    border-radius: 15px;
+    background: #2A2A2A;
+}
+.plus-minus {
+    height: 100px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+.plus-minus img {
+    border-radius: 50%;
+    transition: .2s;
+}
+.plus-minus img:hover {
+    border-color:#2A2A2A;
+    background: #ff5757;
+}
+button {
+    background: transparent;
+    border-radius: 50%;
+}

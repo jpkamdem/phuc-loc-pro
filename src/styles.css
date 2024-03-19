@@ -15,4 +15,10 @@ body {
   position: relative;
   min-height: 100%;
   padding-bottom: 5em;
+  background: #222222;
+  color: #fff;
+}
+h2 {
+  font-size: 4em;
+  text-shadow: 3px 2px #FF5757;
 }

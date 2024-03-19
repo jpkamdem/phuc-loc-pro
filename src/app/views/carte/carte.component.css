@@ -1,0 +1,20 @@
+h2 {
+    text-align: center;
+}
+button {
+    padding: 1em 3em;
+    border-radius: 10px;
+    border: 1px 1px solid #FF5757;
+    background: #FF5757;
+    font-size: 3em;
+    transition: .2s;
+}
+button:hover {
+    background: #fff;
+    color: #FF5757
+}
+section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
