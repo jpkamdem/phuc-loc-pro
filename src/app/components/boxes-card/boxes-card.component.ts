@@ -1,24 +1,29 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { GetboxesService } from '../../services/getboxes.service';
 
 @Component({
   selector: 'boxes-card',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule],
   templateUrl: './boxes-card.component.html',
   styleUrl: './boxes-card.component.css',
 })
 export class BoxesCardComponent implements OnInit {
-  httpClient = inject(HttpClient);
-  data: any[] = []
+
+  boxes: any
+
+  constructor(private getBoxes: GetboxesService) { }
 
   ngOnInit(): void {
-    this.fetchData()
-  }
-  fetchData() {
-    this.httpClient.get('https://jsonplaceholder.typicode.com/posts').subscribe((data: any) => {
-      console.log(data)
-    })
+    this.getBoxes.getBoxes().subscribe(
+      response => {
+        this.boxes = response
+        console.table(this.boxes)
+      },
+      error => {
+        console.error('Flop service :', error)
+      }
+    )
   }
 }

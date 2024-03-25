@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS Box (
     prix decimal(10, 2) DEFAULT NULL,
     image varchar(255) DEFAULT NULL,
     saveurs int(11) DEFAULT NULL,
-    aliments int(11) DEFAULT NULL,
+    aliments int(11) DEFAULT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Box_Saveur (
@@ -322,107 +322,3 @@ VALUES
     (13, 5),
     (13, 2),
     (13, 3);
-
--- update
---     Box
--- set
---     saveurs = 1,
---     aliments = 1
--- where
---     id_box = 1;
-
--- update
---     Box
--- set
---     saveurs = 2,
---     aliments = 2
--- where
---     id_box = 2;
-
--- update
---     Box
--- set
---     saveurs = 3,
---     aliments = 3
--- where
---     id_box = 3;
-
--- update
---     Box
--- set
---     saveurs = 4,
---     aliments = 4
--- where
---     id_box = 4;
-
--- update
---     Box
--- set
---     saveurs = 5,
---     aliments = 5
--- where
---     id_box = 5;
-
--- update
---     Box
--- set
---     saveurs = 6,
---     aliments = 6
--- where
---     id_box = 6;
-
--- update
---     Box
--- set
---     saveurs = 7,
---     aliments = 7
--- where
---     id_box = 7;
-
--- update
---     Box
--- set
---     saveurs = 8,
---     aliments = 8
--- where
---     id_box = 8;
-
--- update
---     Box
--- set
---     saveurs = 9,
---     aliments = 9
--- where
---     id_box = 9;
-
--- update
---     Box
--- set
---     saveurs = 10,
---     aliments = 10
--- where
---     id_box = 10;
-
--- update
---     Box
--- set
---     saveurs = 11,
---     aliments = 11
--- where
---     id_box = 11;
-
--- update
---     Box
--- set
---     saveurs = 12,
---     aliments = 12
--- where
---     id_box = 12;
-
--- update
---     Box
--- set
---     saveurs = 13,
---     aliments = 13
--- where
---     id_box = 13;
