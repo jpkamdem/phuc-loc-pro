@@ -1,4 +1,4 @@
-h2 {
+/* h2 {
     text-align: center;
 }
 button {
@@ -8,13 +8,84 @@ button {
     background: #FF5757;
     font-size: 3em;
     transition: .2s;
+} */
+.panier {
+  width: 240px;
+  border: 4px solid #ff5757;
+  background: #fff;
+  color: #000;
+  position: fixed;
+  left: 75%;
+  top: 0;
+  padding: 1.1em;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
 }
-button:hover {
-    background: #fff;
-    color: #FF5757
+.panier img {
+    height: 50px;
+}
+.panier ul {
+    list-style-type: none;
+}
+button#submit {
+  height: min-content;
+  padding: .5em;
+  margin: 0;
+  font-size: 2.1em;
+  background: #fff;
+  transition: 0.5s;
+  color: #ff5757;
+}
+button#submit:hover {
+  background: #ff5757;
+  color: #fff;
 }
 section {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  justify-content: center;
+}
+.galere {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.boxes-container {
+  margin: auto;
+  display: flex;
+  width: 60vw;
+  max-width: 910px;
+  min-width: 666px;
+  justify-content: space-around;
+  align-items: center;
+}
+.tag-container {
+  display: flex;
+  flex-flow: column;
+  padding: 2em 4em;
+  border-radius: 15px;
+  background: #2a2a2a;
+}
+.plus-minus {
+  height: 100px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+.plus-minus img {
+  border-radius: 50%;
+  transition: 0.2s;
+}
+.plus-minus button {
+  background: transparent;
+  height: 75px;
+  width: 50px;
+  transition: 0.5s;
+}
+.plus-minus button:hover {
+  border-color: #2a2a2a;
+  background: #ff5757;
 }
